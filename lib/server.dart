@@ -9,13 +9,7 @@ void main() async {
 
   var app = Router();
 
-  app.get('/', (Request request) {
-    return Response.ok('Hello, World!');
-  });
-
-  app.get('/user/<user>', (Request request, String user) {
-    return Response.ok('hello $user');
-  });
+  app.get('/', (req) => Response.ok("Have some pizza 🍕"));
 
   await io.serve(app.call, 'localhost', port);
 

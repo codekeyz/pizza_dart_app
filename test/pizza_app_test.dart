@@ -23,12 +23,6 @@ void main() {
   test('Root', () async {
     final response = await get(Uri.parse('$host/'));
     expect(response.statusCode, 200);
-    expect(response.body, 'Hello, World!');
-  });
-
-  test('Echo', () async {
-    final response = await get(Uri.parse('$host/user/Dart'));
-    expect(response.statusCode, 200);
-    expect(response.body, 'hello Dart');
+    expect(response.body, 'Have some pizza 🍕');
   });
 }
