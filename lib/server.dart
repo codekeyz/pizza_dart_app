@@ -11,7 +11,7 @@ void main() async {
 
   app.get('/', (req) => Response.ok("Have some pizza 🍕"));
 
-  await io.serve(app.call, 'localhost', port);
+  await io.serve(app.call, InternetAddress.anyIPv4, port);
 
   print('Server started -> localhost:$port');
 }
