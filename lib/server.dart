@@ -7,9 +7,15 @@ import 'package:shelf/shelf_io.dart' as io;
 void main() async {
   int port = int.tryParse(Platform.environment['PORT'] ?? '') ?? 8080;
 
-  var app = Router();
+  final app = Router();
 
-  app.get('/', (req) => Response.ok("Have some pizza 🍕"));
+  app.get(
+    '/',
+    (req) => Response.ok(
+      "Have some pizza 🍕",
+      headers: {HttpHeaders.contentTypeHeader: 'text/plain; charset=utf-8'},
+    ),
+  );
 
   await io.serve(app.call, InternetAddress.anyIPv4, port);
 
