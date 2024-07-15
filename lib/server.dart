@@ -12,7 +12,7 @@ void main() async {
   app.get(
     '/',
     (req) => Response.ok(
-      "Heya 🍕",
+      "Heya Yo 🍕",
       headers: {HttpHeaders.contentTypeHeader: 'text/plain; charset=utf-8'},
     ),
   );
